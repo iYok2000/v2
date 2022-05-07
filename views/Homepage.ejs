@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/style/nav.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .jumbotron-image {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .containers {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      .menu {
+        display: block;
+      }
+      .menu a {
+        font-size: 25px;
+        font-family: sans-serif;
+        background-color: green;
+        margin: 30px;
+      }
+      .feed {
+        display: block;
+      }
+      .feed img {
+        display: block;
+
+        width: 300px;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+      }
+      .chat {
+        display: block;
+      }
+      .button {
+        display: block;
+        padding: 15px 25px;
+        margin: 0 auto 30px auto;
+        width: calc(100% - 100px);
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #ea80a3;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px #999;
+      }
+
+      .button:hover {
+        background-color: #e13269;
+      }
+
+      .button:active {
+        background-color: #f55da9;
+        box-shadow: 0 4px #666;
+        transform: translateY(4px);
+      }
+      div.relative {
+        position: relative;
+        width: 400px;
+        height: 200px;
+      }
+      div.relative img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 350px;
+        height: 200px;
+      }
+      div.absolute {
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        right: 0;
+        width: 50px;
+        height: 25px;
+        border: 3px solid #de0909;
+        background-color: red;
+        border-radius: 7px;
+        color: #fff;
+        text-align: center;
+      }
+      div.absolute1 {
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+        right: 0;
+        width: 70px;
+        height: 25px;
+        border: 3px solid rgb(118, 114, 114);
+        background-color: rgb(118, 114, 114);
+        border-radius: 5px;
+        color: rgb(252, 252, 252);
+        text-align: center;
+        font-family: sans-serif;
+      }
+      /***********************
+Pure CSS Nyancat by @ffrandias
+
+obviously could do it with less lines of css 
+but I REALLY wanted to only have ONE div.
+
+************************/
+
+body {
+    background:#1c4170;
+}
+
+/* use this to adjust the size of your Nyancat (Whole values only) */
+.NyanSize {
+    font-size:5px;
+}
+
+
+/* animations */
+@-webkit-keyframes catMove {
+    0%   { -webkit-transform:translate(0,0);     }
+    25%  { -webkit-transform:translate(5em,0);   }
+    50%  {  -webkit-transform:translate(5em,5em) }
+    75%  { -webkit-transform:translate(0,5em);   }
+    100% { -webkit-transform:translate(0,0);     }     
+}
+
+/* grrr maybe someday you'll be able to animate 
+pseudo elements independent of the parent. 
+
+Oh well, I guess I can still just animate the 
+parent element via box shadow...if you could 
+parent & animate it would make it worth it */
+@-webkit-keyframes headMove {
+    0%   { top:7em; left:20em;   }
+    25%  { top:6em; left:20em;   }
+    50%  { top:6em; left:21em;   }
+    75%  { top:7em; left:21em;   }
+    100% { top:7em; left:20em;   }  
+}
+
+
+
+.NyanCat, .NyanCat:before, .NyanCat:after {
+    height:1em;width:1em; /* ratio of each "pixel" */
+   
+ /* fixes edges for solid color, makes the 
+    corners a little wonky Grrrr  I checked
+    using a SCSS conditional but it does not complile 
+    the animations correctly. So bugs remain Sadface.*/
+
+    padding:1px;   
+    transform : translateZ(0); /* hack forces hardware acceleration which is kind of needed*/
+    
+    /* Any individual "pixel" effects are applied here */    
+    /*
+    border-radius:1em; 
+    /* so it's easier to just close the comment above...#lazyDeveloper */
+}
+
+.NyanCat:before, .NyanCat:after {
+    content:"";
+    position:absolute;    
+}
+
+/*the Poptart */
+.NyanCat {
+    /* NyanCat positioning */
+    position:absolute;
+    top:50px; left:50px;
+    
+    -webkit-animation-timing-function:step-start;
+   -webkit-animation:catMove 500ms infinite;
+      
+    /* the poptart */
+    box-shadow:
+        10em 0 #000,
+        11em 0 #000,
+        12em 0 #000,
+        13em 0 #000,
+        14em 0 #000,
+        15em 0 #000,
+        16em 0 #000,
+        17em 0 #000,
+        18em 0 #000,
+        19em 0 #000,
+        20em 0 #000,
+        21em 0 #000,
+        22em 0 #000,
+        23em 0 #000,
+        24em 0 #000,
+        25em 0 #000,
+        26em 0 #000,
+        27em 0 #000,
+        28em 0 #000,
+        29em 0 #000,
+    
+        
+         9em 1em #000,
+        10em 1em #ffcc99,
+    
+        11em 1em #ffcc99,
+        12em 1em #ffcc99,
+        13em 1em #ffcc99,
+        14em 1em #ffcc99,
+        15em 1em #ffcc99,
+        16em 1em #ffcc99,
+        17em 1em #ffcc99,
+        18em 1em #ffcc99,
+        19em 1em #ffcc99,
+        20em 1em #ffcc99,
+        21em 1em #ffcc99,
+        22em 1em #ffcc99,
+        23em 1em #ffcc99,
+        24em 1em #ffcc99,
+        25em 1em #ffcc99,
+        26em 1em #ffcc99,
+        27em 1em #ffcc99,
+        28em 1em #ffcc99,
+        
+        29em 1em #ffcc99,
+        30em 1em #000,
+        
+        8em 2em #000,
+        9em 2em #ffcc99,
+        10em 2em #ffcc99,
+        11em 2em #ffcc99,
+        
+        12em 2em #ffa2f8,
+        13em 2em #ffa2f8,
+        14em 2em #ffa2f8,
+        15em 2em #ffa2f8,
+        16em 2em #ffa2f8,
+        17em 2em #ffa2f8,
+        18em 2em #ffa2f8,
+        19em 2em #ffa2f8,
+        20em 2em #ffa2f8,
+        21em 2em #ffa2f8,
+        22em 2em #ffa2f8,
+        23em 2em #ffa2f8,
+        24em 2em #ffa2f8,
+        25em 2em #ffa2f8,
+        26em 2em #ffa2f8,
+        27em 2em #ffa2f8,
+        
+        28em 2em #ffcc99,
+        29em 2em #ffcc99,
+        30em 2em #ffcc99,
+        31em 2em #000,
+        
+        
+        8em 3em #000,
+        9em 3em #ffcc99,
+        10em 3em #ffcc99,
+        
+        11em 3em #ffa2f8,   
+        12em 3em #ffa2f8,
+        13em 3em #ffa2f8,
+        14em 3em #ffa2f8,
+        15em 3em #ffa2f8,
+        16em 3em #ffa2f8,
+        17em 3em #ffa2f8,
+        18em 3em #ff45ab,
+        19em 3em #ff45ab,
+        20em 3em #ffa2f8,
+        21em 3em #ffa2f8,
+        22em 3em #ffa2f8,
+        23em 3em #ff45ab,
+        24em 3em #ffa2f8,
+        25em 3em #ffa2f8,
+        26em 3em #ffa2f8,
+        27em 3em #ffa2f8,
+        28em 3em #ffa2f8,
+        
+        29em 3em #ffcc99,
+        30em 3em #ffcc99,
+        31em 3em #000,
+        
+        8em 4em #000,
+        9em 4em #ffcc99,
+        
+        10em 4em #ffa2f8,
+        11em 4em #ffa2f8,   
+        12em 4em #ff45ab,
+        13em 4em #ffa2f8,
+        14em 4em #ffa2f8,
+        15em 4em #ffa2f8,
+        16em 4em #ffa2f8,
+        17em 4em #ffa2f8,
+        18em 4em #ff45ab,
+        19em 4em #ff45ab,
+        20em 4em #ffa2f8,
+        21em 4em #ffa2f8,
+        22em 4em #ffa2f8,
+        23em 4em #ff45ab,
+        24em 4em #ffa2f8,
+        25em 4em #ffa2f8,
+        26em 4em #ffa2f8,
+        27em 4em #ffa2f8,
+        28em 4em #ffa2f8,
+        29em 4em #ffa2f8,
+        
+        30em 4em #ffcc99,
+        31em 4em #000,
+        
+        8em 5em #000,
+        9em 5em #ffcc99,
+        
+        10em 5em #ffa2f8,
+        11em 5em #ffa2f8,   
+        12em 5em #ffa2f8,
+        13em 5em #ffa2f8,
+        14em 5em #ffa2f8,
+        15em 5em #ffa2f8,
+        16em 5em #ffa2f8,
+        17em 5em #ffa2f8,
+        18em 5em #ffa2f8,
+        19em 5em #ffa2f8,
+        20em 5em #ffa2f8,
+        21em 5em #ffa2f8,
+        22em 5em #ffa2f8,
+        23em 5em #ffa2f8,
+        24em 5em #ffa2f8,
+        25em 5em #ffa2f8,
+        26em 5em #ffa2f8,
+        27em 5em #ffa2f8,
+        28em 5em #ffa2f8,
+        29em 5em #ffa2f8,
+        
+        30em 5em #ffcc99,
+        31em 5em #000,
+      
+
+        8em 6em #000,
+        9em 6em #ffcc99,
+        
+        10em 6em #ffa2f8,
+        11em 6em #ffa2f8,   
+        12em 6em #ffa2f8,
+        13em 6em #ffa2f8,
+        14em 6em #ffa2f8,
+        15em 6em #ffa2f8,
+        16em 6em #ffa2f8,
+        17em 6em #ffa2f8,
+        18em 6em #ffa2f8,
+        19em 6em #ffa2f8,
+        20em 6em #ffa2f8,
+        21em 6em #ffa2f8,
+        22em 6em #ffa2f8,
+        23em 6em #ffa2f8,
+        24em 6em #ffa2f8,
+        25em 6em #ffa2f8,
+        26em 6em #ff45ab,
+        27em 6em #ffa2f8,
+        28em 6em #ffa2f8,
+        29em 6em #ffa2f8,
+        
+        30em 6em #ffcc99,
+        31em 6em #000,
+        
+        8em 7em #000,
+        9em 7em #ffcc99,
+        
+        10em 7em #ffa2f8,
+        11em 7em #ffa2f8,   
+        12em 7em #ffa2f8,
+        13em 7em #ffa2f8,
+        14em 7em #ffa2f8,
+        15em 7em #ffa2f8,
+        16em 7em #ffa2f8,
+        17em 7em #ffa2f8,
+        18em 7em #ffa2f8,
+        19em 7em #ffa2f8,
+        20em 7em #ffa2f8,
+        21em 7em #ffa2f8,
+        22em 7em #ffa2f8,
+        23em 7em #ffa2f8,
+        24em 7em #ffa2f8,
+        25em 7em #ffa2f8,
+        26em 7em #ffa2f8,
+        27em 7em #ffa2f8,
+        28em 7em #ffa2f8,
+        29em 7em #ffa2f8,
+        
+        30em 7em #ffcc99,
+        31em 7em #000,
+        
+        
+        8em 8em #000,
+        9em 8em #ffcc99,
+        
+        10em 8em #ffa2f8,
+        11em 8em #ffa2f8,   
+        12em 8em #ffa2f8,
+        13em 8em #ffa2f8,
+        14em 8em #ffa2f8,
+        15em 8em #ffa2f8,
+        16em 8em #ffa2f8,
+        17em 8em #ff45ab,
+        18em 8em #ffa2f8,
+        19em 8em #ffa2f8,
+        20em 8em #ffa2f8,
+        21em 8em #ffa2f8,
+        22em 8em #ffa2f8,
+        23em 8em #ffa2f8,
+        24em 8em #ffa2f8,
+        25em 8em #ffa2f8,
+        26em 8em #ffa2f8,
+        27em 8em #ffa2f8,
+        28em 8em #ffa2f8,
+        29em 8em #ffa2f8,
+        
+        30em 8em #ffcc99,
+        31em 8em #000,
+        
+        
+        8em 9em #000,
+        9em 9em #ffcc99,
+        
+        10em 9em #ffa2f8,
+        11em 9em #ffa2f8,   
+        12em 9em #ffa2f8,
+        13em 9em #ffa2f8,
+        14em 9em #ffa2f8,
+        15em 9em #ffa2f8,
+        16em 9em #ffa2f8,
+        17em 9em #ffa2f8,
+        18em 9em #ffa2f8,
+        19em 9em #ffa2f8,
+        20em 9em #ffa2f8,
+        21em 9em #ffa2f8,
+        22em 9em #ffa2f8,
+        23em 9em #ffa2f8,
+        24em 9em #ffa2f8,
+        25em 9em #ffa2f8,
+        26em 9em #ffa2f8,
+        27em 9em #ffa2f8,
+        28em 9em #ffa2f8,
+        29em 9em #ffa2f8,
+        
+        30em 9em #ffcc99,
+        31em 9em #000,   
+        
+
+        8em 10em #000,
+        9em 10em #ffcc99,
+        
+        10em 10em #ffa2f8,
+        11em 10em #ffa2f8,   
+        12em 10em #ffa2f8,
+        13em 10em #ff45ab,
+        14em 10em #ffa2f8,
+        15em 10em #ffa2f8,
+        16em 10em #ffa2f8,
+        17em 10em #ffa2f8,
+        18em 10em #ffa2f8,
+        19em 10em #ffa2f8,
+        20em 10em #ffa2f8,
+        21em 10em #ffa2f8,
+        22em 10em #ffa2f8,
+        23em 10em #ffa2f8,
+        24em 10em #ffa2f8,
+        25em 10em #ffa2f8,
+        26em 10em #ffa2f8,
+        27em 10em #ffa2f8,
+        28em 10em #ffa2f8,
+        29em 10em #ffa2f8,
+        
+        30em 10em #ffcc99,
+        31em 10em #000,      
+        
+        
+        8em 11em #000,
+        9em 11em #ffcc99,
+        
+        10em 11em #ffa2f8,
+        11em 11em #ffa2f8,   
+        12em 11em #ffa2f8,
+        13em 11em #ffa2f8,
+        14em 11em #ffa2f8,
+        15em 11em #ffa2f8,
+        16em 11em #ffa2f8,
+        17em 11em #ffa2f8,
+        18em 11em #ffa2f8,
+        19em 11em #ff45ab,
+        20em 11em #ffa2f8,
+        21em 11em #ffa2f8,
+        22em 11em #ffa2f8,
+        23em 11em #ffa2f8,
+        24em 11em #ffa2f8,
+        25em 11em #ffa2f8,
+        26em 11em #ffa2f8,
+        27em 11em #ffa2f8,
+        28em 11em #ffa2f8,
+        29em 11em #ffa2f8,
+        
+        30em 11em #ffcc99,
+        31em 11em #000,  
+        
+
+        8em 12em #000,
+        9em 12em #ffcc99,
+        
+        10em 12em #ffa2f8,
+        11em 12em #ffa2f8,   
+        12em 12em #ffa2f8,
+        13em 12em #ffa2f8,
+        14em 12em #ffa2f8,
+        15em 12em #ffa2f8,
+        16em 12em #ffa2f8,
+        17em 12em #ffa2f8,
+        18em 12em #ffa2f8,
+        19em 12em #ffa2f8,
+        20em 12em #ffa2f8,
+        21em 12em #ffa2f8,
+        22em 12em #ffa2f8,
+        23em 12em #ffa2f8,
+        24em 12em #ffa2f8,
+        25em 12em #ffa2f8,
+        26em 12em #ffa2f8,
+        27em 12em #ffa2f8,
+        28em 12em #ffa2f8,
+        29em 12em #ffa2f8,
+        
+        30em 12em #ffcc99,
+        31em 12em #000,       
+        
+        8em 13em #000,
+        9em 13em  #ffcc99,
+        
+        10em 13em  #ffa2f8,
+        11em 13em  #ff45ab,   
+        12em 13em  #ffa2f8,
+        13em 13em  #ffa2f8,
+        14em 13em  #ffa2f8,
+        15em 13em  #ffa2f8,
+        16em 13em  #ffa2f8,
+        17em 13em  #ffa2f8,
+        18em 13em  #ffa2f8,
+        19em 13em  #ffa2f8,
+        20em 13em  #ffa2f8,
+        21em 13em  #ffa2f8,
+        22em 13em  #ffa2f8,
+        23em 13em  #ffa2f8,
+        24em 13em  #ffa2f8,
+        25em 13em  #ffa2f8,
+        26em 13em  #ffa2f8,
+        27em 13em  #ffa2f8,
+        28em 13em  #ffa2f8,
+        29em 13em  #ffa2f8,
+        
+        30em 13em  #ffcc99,
+        31em 13em  #000,        
+        
+        8em 14em #000,
+        9em 14em  #ffcc99,
+        
+        10em 14em  #ffa2f8,
+        11em 14em  #ffa2f8,   
+        12em 14em  #ffa2f8,
+        13em 14em  #ffa2f8,
+        14em 14em  #ffa2f8,
+        15em 14em  #ffa2f8,
+        16em 14em  #ffa2f8,
+        17em 14em  #ffa2f8,
+        18em 14em  #ff45ab,
+        19em 14em  #ffa2f8,
+        20em 14em  #ffa2f8,
+        21em 14em  #ffa2f8,
+        22em 14em  #ffa2f8,
+        23em 14em  #ffa2f8,
+        24em 14em  #ffa2f8,
+        25em 14em  #ffa2f8,
+        26em 14em  #ffa2f8,
+        27em 14em  #ffa2f8,
+        28em 14em  #ffa2f8,
+        29em 14em  #ffa2f8,
+        
+        30em 14em  #ffcc99,
+        31em 14em  #000,        
+        
+        8em 15em #000,
+        9em 15em  #ffcc99,
+        
+        10em 15em  #ffa2f8,
+        11em 15em  #ffa2f8,   
+        12em 15em  #ffa2f8,
+        13em 15em  #ffa2f8,
+        14em 15em  #ffa2f8,
+        15em 15em  #ffa2f8,
+        16em 15em  #ffa2f8,
+        17em 15em  #ffa2f8,
+        18em 15em  #ffa2f8,
+        19em 15em  #ffa2f8,
+        20em 15em  #ffa2f8,
+        21em 15em  #ffa2f8,
+        22em 15em  #ffa2f8,
+        23em 15em  #ffa2f8,
+        24em 15em  #ffa2f8,
+        25em 15em  #ffa2f8,
+        26em 15em  #ffa2f8,
+        27em 15em  #ff45ab,
+        28em 15em  #ffa2f8,
+        29em 15em  #ffa2f8,
+        
+        30em 15em  #ffcc99,
+        31em 15em  #000,        
+        
+        8em 16em #000,
+        9em 16em  #ffcc99,
+        
+        10em 16em  #ffa2f8,
+        11em 16em  #ffa2f8,   
+        12em 16em  #ffa2f8,
+        13em 16em  #ffa2f8,
+        14em 16em  #ffa2f8,
+        15em 16em  #ff45ab,
+        16em 16em  #ffa2f8,
+        17em 16em  #ffa2f8,
+        18em 16em  #ffa2f8,
+        19em 16em  #ffa2f8,
+        20em 16em  #ffa2f8,
+        21em 16em  #ff45ab,
+        22em 16em  #ffa2f8,
+        23em 16em  #ffa2f8,
+        24em 16em  #ffa2f8,
+        25em 16em  #ffa2f8,
+        26em 16em  #ffa2f8,
+        27em 16em  #ffa2f8,
+        28em 16em  #ffa2f8,
+        29em 16em  #ffa2f8,
+        
+        30em 16em  #ffcc99,
+        31em 16em  #000,        
+        
+        8em 17em #000,
+        9em 17em #ffcc99,
+         
+        10em 17em #ffa2f8,
+        11em 17em #ffa2f8,    
+        12em 17em #ffa2f8,
+        13em 17em #ffa2f8,
+        14em 17em #ffa2f8,
+        15em 17em #ffa2f8,
+        16em 17em #ffa2f8,
+        17em 17em #ffa2f8,
+        18em 17em #ffa2f8,
+        19em 17em #ffa2f8,
+        20em 17em #ffa2f8,
+        21em 17em #ffa2f8,
+        22em 17em #ffa2f8,
+        23em 17em #ffa2f8,
+        24em 17em #ffa2f8,
+        25em 17em #ffa2f8,
+        26em 17em #ffa2f8,
+        27em 17em #ffa2f8,
+        28em 17em #ffa2f8,
+        29em 17em #ffa2f8,
+         
+        30em 17em #ffcc99,
+        31em 17em #000,
+        
+        8em 18em #000,
+        9em 18em #ffcc99,
+        10em 18em #ffcc99,
+        11em 18em #ffcc99,
+        
+        12em 18em #ffa2f8,
+        13em 18em #ffa2f8,
+        14em 18em #ffa2f8,
+        15em 18em #ffa2f8,
+        16em 18em #ffa2f8,
+        17em 18em #ffa2f8,
+        18em 18em #ffa2f8,
+        19em 18em #ffa2f8,
+        20em 18em #ffa2f8,
+        21em 18em #ffa2f8,
+        22em 18em #ffa2f8,
+        23em 18em #ffa2f8,
+        24em 18em #ffa2f8,
+        25em 18em #ffa2f8,
+        26em 18em #ffa2f8,
+        27em 18em #ffa2f8,
+        
+        28em 18em #ffcc99,
+        29em 18em #ffcc99,
+        30em 18em #ffcc99,
+        31em 18em #000,
+        
+        9em 19em #000,
+        10em 19em #ffcc99,
+    
+        11em 19em #ffcc99,
+        12em 19em #ffcc99,
+        13em 19em #ffcc99,
+        14em 19em #ffcc99,
+        15em 19em #ffcc99,
+        16em 19em #ffcc99,
+        17em 19em #ffcc99,
+        18em 19em #ffcc99,
+        19em 19em #ffcc99,
+        20em 19em #ffcc99,
+        21em 19em #ffcc99,
+        22em 19em #ffcc99,
+        23em 19em #ffcc99,
+        24em 19em #ffcc99,
+        25em 19em #ffcc99,
+        26em 19em #ffcc99,
+        27em 19em #ffcc99,
+        28em 19em #ffcc99,
+        
+        29em 19em #ffcc99,
+        30em 19em #000,        
+        
+        10em 20em #000,
+        11em 20em #000,
+        12em 20em #000,
+        13em 20em #000,
+        14em 20em #000,
+        15em 20em #000,
+        16em 20em #000,
+        17em 20em #000,
+        18em 20em #000,
+        19em 20em #000,
+        20em 20em #000,
+        21em 20em #000,
+        22em 20em #000,
+        23em 20em #000,
+        24em 20em #000,
+        25em 20em #000,
+        26em 20em #000,
+        27em 20em #000,
+        28em 20em #000,
+        29em 20em #000;
+
+}
+
+/* the tail & feet
+
+TO FIX.TO FIX.TO FIX.TO FIX.TO FIX.TO FIX.
+
+
+*/
+.NyanCat:before {
+   top:11em;
+    box-shadow:
+        
+        
+        3em -3em #000,
+        2em -2em #000,
+        3em -2em #999,
+        4em -2em #000,
+        1em -1em #000,
+        2em -1em #999,
+        3em -1em #999,
+        4em -1em #999,
+        5em -1em #000,
+        2em 0   #000,
+        3em 0   #999,
+        4em 0   #999,
+        5em 0   #999,
+        6em 0   #000,
+        7em 0   #000,
+        3em 1em #000,
+        4em 1em #999,
+        5em 1em #999,
+        6em 1em #999,
+        7em 1em #999,
+        4em 2em #000,
+        5em 2em #000,
+        6em 2em #999,
+        7em 2em #999,
+        6em 3em #000,
+        7em 3em #000,
+       
+
+        
+       
+        
+        /* The feet */
+        
+        
+        /* back feet */
+        
+        
+        /* back back foot */
+        
+        7em 7em #000,
+        6em 8em #000,
+        7em 8em #999,
+        8em 8em #999,
+        6em 9em #000,
+        7em 9em #999,
+        8em 9em #999,
+        9em 9em #999,
+        5em 10em #000,
+        6em 10em #999,
+        7em 10em #999,
+        8em 10em #999,
+        5em 11em #000,
+        6em 11em #999,
+        7em 11em #999,
+        5em 12em #000,
+        6em 12em #000,
+        7em 12em #000,
+        8em 11em #000,
+        9em 10em #000,
+        
+        
+        
+        /* front back foot */
+        
+        12em 10em #000,
+        13em 10em #999,
+        14em 10em #999,
+        15em 10em #000,
+        
+        11em 11em #000,
+        12em 11em #999,
+        13em 11em #999,
+        14em 11em #000,
+        
+        11em 12em #000,
+        12em 12em #000,
+        13em 12em #000,
+        
+
+        
+        /*front feet */
+        
+        /* back front foot */
+        
+        22em 10em #000,
+        23em 10em #999, 
+        24em 10em #999,
+        25em 10em #000,
+        
+        22em 11em #000,
+        23em 11em #999, 
+        24em 11em #999,
+        25em 11em #000,
+        
+        23em 12em #000, 
+        24em 12em #000,
+        
+        /*front front foot */
+        
+        27em 10em #000,
+        28em 10em #999,
+        29em 10em #999,
+        30em 10em #000,
+        
+        27em 11em #000,
+        28em 11em #999,
+        29em 11em #999,
+        30em 11em #000,
+        
+        28em 12em #000,
+        29em 12em #000;
+ 
+}
+
+
+/* the head */
+.NyanCat:after {
+    top:7em; left: 20em;
+    -webkit-animation:headMove 500ms infinite;
+    
+    
+    box-shadow:
+        2em 0 #000,
+        3em 0 #000,
+        13em 0 #000,
+        14em 0 #000,
+        
+        
+        1em 1em #000,
+        2em 1em #999,
+        3em 1em #999,
+        4em 1em #000,
+        12em 1em #000,
+        13em 1em #999,
+        14em 1em #999,
+        15em 1em #000,
+        
+        1em 2em #000,
+        2em 2em #999,
+        3em 2em #999,
+        4em 2em #999,
+        5em 2em #000,
+        11em 2em #000,
+        12em 2em #999,
+        13em 2em #999,
+        14em 2em #999,
+        15em 2em #000,
+        
+        
+        1em 3em #000,
+        2em 3em #999,
+        3em 3em #999,
+        4em 3em #999,
+        5em 3em #999,
+        6em 3em #000,
+        7em 3em #000,
+        8em 3em #000,
+        9em 3em #000,
+        10em 3em #000,
+        11em 3em #999,
+        12em 3em #999,
+        13em 3em #999,
+        14em 3em #999,
+        15em 3em #000,
+        
+        0 4em #000,
+        1em 4em #999,
+        2em 4em #999,
+        3em 4em #999,
+        4em 4em #999,
+        5em 4em #999,
+        6em 4em #999,
+        7em 4em #999,
+        8em 4em #999,
+        9em 4em #999,
+        10em 4em #999,
+        11em 4em #999,
+        12em 4em #999,
+        13em 4em #999,
+        14em 4em #999,
+        15em 4em #000,
+        
+        0 5em #000,
+        1em 5em #999,
+        2em 5em #999,
+        3em 5em #999,
+        4em 5em #999,
+        5em 5em #999,
+        6em 5em #999,
+        7em 5em #999,
+        8em 5em #999,
+        9em 5em #999,
+        10em 5em #999,
+        11em 5em #999,
+        12em 5em #999,
+        13em 5em #999,
+        14em 5em #999,
+        15em 5em #999,
+        16em 5em #000,
+        
+        0 6em #000,
+        1em 6em #999,
+        2em 6em #999,
+        3em 6em #999,
+        4em 6em #fff,
+        5em 6em #000,
+        6em 6em #999,
+        7em 6em #999,
+        8em 6em #999,
+        9em 6em #999,
+        10em 6em #999,
+        11em 6em #999,
+        12em 6em #fff,
+        13em 6em #000,
+        14em 6em #999,
+        15em 6em #999,
+        16em 6em #000,
+        
+        0 7em #000,
+        1em 7em #999,
+        2em 7em #999,
+        3em 7em #999,
+        4em 7em #000,
+        5em 7em #000,
+        6em 7em #999,
+        7em 7em #999,
+        8em 7em #999,
+        9em 7em #999,
+        10em 7em #000,
+        11em 7em #999,
+        12em 7em #000,
+        13em 7em #000,
+        14em 7em #999,
+        15em 7em #999,
+        16em 7em #000,
+        
+        0 8em #000,
+        1em 8em #999,
+        2em 8em #f99,
+        3em 8em #f99,
+        4em 8em #999,
+        5em 8em #999,
+        6em 8em #999,
+        7em 8em #999,
+        8em 8em #999,
+        9em 8em #999,
+        10em 8em #999,
+        11em 8em #999,
+        12em 8em #999,
+        13em 8em #999,
+        14em 8em #f99,
+        15em 8em #f99,
+        16em 8em #000,
+        
+        0 9em #000,
+        1em 9em #999,
+        2em 9em #f99,
+        3em 9em #f99,
+        4em 9em #999,
+        5em 9em #999,
+        6em 9em #999,
+        7em 9em #999,
+        8em 9em #999,
+        9em 9em #000,
+        10em 9em #999,
+        11em 9em #999,
+        12em 9em #999,
+        13em 9em #999,
+        14em 9em #f99,
+        15em 9em #f99,
+        16em 9em #000,
+        
+        1em 10em #000,
+        2em 10em #999,
+        3em 10em #999,
+        4em 10em #999,
+        5em 10em #000,
+        6em 10em #999,
+        7em 10em #999,
+        8em 10em #000,
+        9em 10em #000,
+        10em 10em #000,
+        11em 10em #999,
+        12em 10em #999,
+        13em 10em #000,
+        14em 10em #999,
+        15em 10em #999,
+        16em 10em #000,
+        
+        2em 11em #000,
+        3em 11em #999,
+        4em 11em #999,
+        5em 11em #999,
+        6em 11em #000,
+        7em 11em #000,
+        8em 11em #000,
+        9em 11em #999,
+        10em 11em #000,
+        11em 11em #000,
+        12em 11em #000,
+        13em 11em #999,
+        14em 11em #999,
+        15em 11em #000,
+        
+        3em 12em #000,
+        4em 12em #999,
+        5em 12em #999,
+        6em 12em #999,
+        7em 12em #999,
+        8em 12em #999,
+        9em 12em #999,
+        10em 12em #999,
+        11em 12em #999,
+        12em 12em #999,
+        13em 12em #999,
+        14em 12em #000,
+        
+        
+        4em 13em #000,
+        5em 13em #000,
+        6em 13em #000,
+        7em 13em #000,
+        8em 13em #000,
+        9em 13em #000,
+        10em 13em #000,
+        11em 13em #000,
+        12em 13em #000,
+        13em 13em #000;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">EJS Project</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >dropdown <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="Cat">Page nyan cat</a></li>
+              <li><a href="Best">Page bestJirat</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="Dashboard">DashBoard</a></li>
+          <li><a href="Contract">Contract</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#"
+              ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="glyphicon glyphicon-log-in"></span> Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+
+    <div class="container py-5">
+      <div
+        class="jumbotron text-white jumbotron-image shadow"
+        style="
+          background-image: url(https://media.istockphoto.com/photos/tropical-leaves-abstract-green-leaves-texture-nature-background-picture-id1254474165?k=20&m=1254474165&s=170667a&w=0&h=rZS3KPtERSZ1KBesOikJ49m9WwCImg7So4u6Yxp82ag=);
+        "
+      >
+        <h2 class="mb-4" style="color: #fff">Welcome to EJS Project</h2>
+        <p class="mb-4" style="color: #fff">Hey, check this out.</p>
+        <a href="/" class="btn btn-primary">More </a>
+      </div>
+    </div>
+    <audio>
+        <source src="http://frandias.com/_audio/nyan.ogg"></source>
+    </audio>
+   
+    <div class="containers">
+      <div class="menu">
+        <h1 style="text-align: center; color: white">MENU</h1>
+        <button
+          class="button"
+          type="button"
+          class="btn btn-info"
+          data-toggle="collapse"
+          data-target="#demo"
+        >
+          Food  
+        </button>
+        <button
+          class="button"
+          type="button"
+          class="btn btn-info"
+          data-toggle="collapse"
+          data-target="#demo1"
+        >
+          HRK
+        </button>
+        <button
+          class="button"
+          type="button"
+          class="btn btn-info"
+          data-toggle="collapse"
+          data-target="#demo2"
+        >
+          Nyan Cat Click me
+        </button>
+      </div>
+      <div class="feed">
+        <div id="demo" class="collapse">
+          <div>
+            <div
+              class="well"
+              style="
+                background-color: goldenrod;
+                width: auto;
+                height: auto;
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+              "
+            >
+              อาหารเย็นแบบไทยๆ ช่วยลดน้ำหนัก : ยำวุ้นเส้น
+            </div>
+            <img
+              alt="ยำวุ้นเส้น"
+              src="https://fund.dtam.moph.go.th/images/document/01_%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%84%E0%B8%97.jpg"
+            />
+          </div>
+          <hr style="border-top: 3px solid gray" />
+          <div>
+            <div
+              class="well"
+              style="
+                background-color: goldenrod;
+                width: auto;
+                height: auto;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                text-align: center;
+              "
+            >
+              อาหารเย็นแบบไทยๆ ช่วยลดน้ำหนัก : น้ำพริกกับผักต้ม
+            </div>
+            <img
+              alt="น้ำพริกกับผักต้ม"
+              src="https://cms.dmpcdn.com/women/2019/11/22/eef6bc20-0cdb-11ea-b1fe-9942777b544f_original.jpg"
+            />
+          </div>
+          <hr style="border-top: 3px solid gray" />
+        </div>
+        <div id="demo1" class="collapse">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/rLdH-9VV0cM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/2xkcWPPf_mo"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div id="demo2" class="collapse">
+            <div class="NyanCat NyanSize"></div>
+
+            <audio>
+                <source src="http://frandias.com/_audio/nyan.ogg"></source>
+            </audio>
+           
+        </div>
+      </div>
+      <div class="chat">
+        <div class="relative">
+          <img
+            src="https://th.bing.com/th/id/OIP.5sgWrcvIt0RxQdJufWY3dgHaEK?pid=ImgDet&rs=1"
+            alt="HRK"
+          />
+          <div class="absolute">Live</div>
+          <div class="absolute1">
+            <i style="font: size 10px;" class="fa">&#xf06e;</i>100 K
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        //Meh, not listening to the grief you might give me over not css. 
+    
+    function songOfTheNyanPeople () {
+        var audio = document.getElementsByTagName("audio")[0];
+        audio.play();
+        audio.loop = true;
+    }
+    
+    songOfTheNyanPeople();
+    
+    </script>
+  </body>
+</html>

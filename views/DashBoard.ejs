@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="/style/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">EJS Project</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                >dropdown <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="Cat">Page nyan cat</a></li>
+                <li><a href="Best">Page bestJirat</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul>
+            </li>
+            <li><a href="Dashboard">DashBoard</a></li>
+            <li><a href="Contract">Contract</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-log-in"></span> Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br />
+    <br />
+    <hr style="height: 2px; background-color: brown" />
+    <h1
+      style="
+        text-align: center;
+        color: white;
+        background-color: black;
+        padding: 20px;
+      "
+    >
+      DASHBOARD
+    </h1>
+    <hr style="height: 2px; background-color: brown" />
+    <div class="container">
+      <h2>Table</h2>
+      <p>ข้อมูล Every thing:</p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(item){ %>
+                <tr>
+                    <td> <%= item.id  %> </td>
+                    <td> <%= item.title  %> </td>
+                </tr>
+            <% }); %>
+          
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

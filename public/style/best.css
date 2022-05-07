@@ -1,0 +1,28 @@
+.header{
+    border: 1px solid purple;
+    border-radius: 20px;
+    height: 100px;
+    width: 80%;
+    background-color: rgb(199, 154, 241);
+    box-shadow: 0 0 5px 2px slateblue;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 220px);
+
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid-user{
+    display: block;
+    border: 1px solid black;
+    text-align: center;
+    padding: 2px;
+   padding-top: 10px;
+   margin: 1px;
+}
